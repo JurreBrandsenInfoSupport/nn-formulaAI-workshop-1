@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import Link from "next/link";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -17,6 +18,25 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
+        <nav className="w-full bg-white/10 p-4">
+          <ul className="flex justify-center gap-4">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/posts">Posts</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link href="/portfolio">Portfolio</Link>
+            </li>
+          </ul>
+        </nav>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
